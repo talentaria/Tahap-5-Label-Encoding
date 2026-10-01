@@ -1,0 +1,18 @@
+from sklearn.preprocessing import LabelEncoder
+
+label_encoders = {}
+
+kolom_kategorikal = [
+    'Nama',
+    'Jenis_Kelamin',
+    'Prodi',
+    'Status',
+    'Nilai_Akhir'
+]
+
+for kolom in kolom_kategorikal:
+    le = LabelEncoder()
+    df[kolom] = le.fit_transform(df[kolom].astype(str))
+    label_encoders[kolom] = le
+
+df.head()
